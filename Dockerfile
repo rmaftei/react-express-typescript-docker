@@ -37,9 +37,13 @@ RUN apk del curl gnupg && \
 
 
 ADD . /opt/webapp
+WORKDIR /opt/webapp/frontend
+RUN mkdir ../build
+RUN yarn install
+RUN yarn build
+
 WORKDIR /opt/webapp
+RUN yarn install
 
 # EXPOSE 8080 # only for local
-
-RUN yarn install
 CMD yarn start $PORT
