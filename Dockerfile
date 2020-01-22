@@ -5,7 +5,7 @@ ENV NVM_DIR /home/webapp/.nvm
 
 ENV VERSION=v13.5.0 NPM_VERSION=6 YARN_VERSION=latest
 
-RUN apk add --no-cache curl gnupg libstdc++ git
+RUN apk add --no-cache curl gnupg libstdc++ git chromium
 
 RUN curl -sfSLO https://unofficial-builds.nodejs.org/download/release/${VERSION}/node-${VERSION}-linux-x64-musl.tar.xz && \
   curl -sfSLO https://unofficial-builds.nodejs.org/download/release/${VERSION}/SHASUMS256.txt && \
